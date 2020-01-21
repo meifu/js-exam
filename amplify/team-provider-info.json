@@ -1,0 +1,20 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-js-exam-dev-113819-authRole",
+            "UnauthRoleArn": "arn:aws:iam::285415063269:role/amplify-js-exam-dev-113819-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::285415063269:role/amplify-js-exam-dev-113819-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-js-exam-dev-113819-deployment",
+            "UnauthRoleName": "amplify-js-exam-dev-113819-unauthRole",
+            "StackName": "amplify-js-exam-dev-113819",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:285415063269:stack/amplify-js-exam-dev-113819/d1dcb5b0-38da-11ea-80cb-065c56f01aee",
+            "AmplifyAppId": "d17kt1cjv60w3b"
+        },
+        "categories": {
+            "auth": {
+                "jsexame6084aeb": {}
+            }
+        }
+    }
+}

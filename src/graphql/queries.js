@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
 export const getRoom = `query GetRoom($id: ID!) {
@@ -6,18 +6,75 @@ export const getRoom = `query GetRoom($id: ID!) {
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -32,10 +89,52 @@ export const getRoom = `query GetRoom($id: ID!) {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
@@ -55,6 +154,7 @@ export const listRooms = `query ListRooms(
         timeEnd
         status
         tags
+        comment
       }
       subjectId
       description
@@ -65,10 +165,6 @@ export const listRooms = `query ListRooms(
       createTime
       password
       users {
-        items {
-          id
-          name
-        }
         nextToken
       }
       currentRecord {
@@ -79,6 +175,7 @@ export const listRooms = `query ListRooms(
         timeEnd
         status
       }
+      comment
     }
     nextToken
   }
@@ -90,33 +187,113 @@ export const getJeUser = `query GetJeUser($id: ID!) {
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
@@ -136,6 +313,7 @@ export const listJeUsers = `query ListJeUsers(
         description
         createTime
         password
+        comment
       }
       team {
         id
@@ -150,6 +328,7 @@ export const listJeUsers = `query ListJeUsers(
         timeEnd
         status
         tags
+        comment
       }
       hostTest {
         id
@@ -159,6 +338,7 @@ export const listJeUsers = `query ListJeUsers(
         timeEnd
         status
         tags
+        comment
       }
     }
     nextToken
@@ -200,19 +380,9 @@ export const listTeams = `query ListTeams(
       name
       description
       users {
-        items {
-          id
-          name
-        }
         nextToken
       }
       questionSet {
-        items {
-          id
-          name
-          description
-          tags
-        }
         nextToken
       }
     }
@@ -225,15 +395,47 @@ export const getTest = `query GetTest($id: ID!) {
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -246,6 +448,39 @@ export const getTest = `query GetTest($id: ID!) {
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -263,6 +498,7 @@ export const getTest = `query GetTest($id: ID!) {
     }
     status
     tags
+    comment
   }
 }
 `;
@@ -280,6 +516,7 @@ export const listTests = `query ListTests(
         description
         createTime
         password
+        comment
       }
       team {
         id
@@ -288,10 +525,6 @@ export const listTests = `query ListTests(
       }
       subjectId
       users {
-        items {
-          id
-          name
-        }
         nextToken
       }
       host {
@@ -302,18 +535,11 @@ export const listTests = `query ListTests(
       timeBegin
       timeEnd
       records {
-        items {
-          id
-          subjectId
-          syncCode
-          timeBegin
-          timeEnd
-          status
-        }
         nextToken
       }
       status
       tags
+      comment
     }
     nextToken
   }
@@ -327,6 +553,39 @@ export const getRecord = `query GetRecord($id: ID!) {
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -359,22 +618,80 @@ export const getRecord = `query GetRecord($id: ID!) {
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
@@ -397,19 +714,9 @@ export const listRecords = `query ListRecords(
       timeEnd
       status
       comment {
-        items {
-          author
-          time
-          content
-        }
         nextToken
       }
       history {
-        items {
-          id
-          time
-          code
-        }
         nextToken
       }
       ques {
@@ -433,6 +740,7 @@ export const listRecords = `query ListRecords(
         timeEnd
         status
         tags
+        comment
       }
       room {
         id
@@ -440,6 +748,7 @@ export const listRecords = `query ListRecords(
         description
         createTime
         password
+        comment
       }
     }
     nextToken
@@ -455,9 +764,50 @@ export const getComment = `query GetComment($id: ID!) {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -494,9 +844,50 @@ export const getHistory = `query GetHistory($id: ID!) {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
     snapComments {
       items {
@@ -529,12 +920,6 @@ export const listHistorys = `query ListHistorys(
         status
       }
       snapComments {
-        items {
-          id
-          time
-          author
-          content
-        }
         nextToken
       }
     }
@@ -552,6 +937,17 @@ export const getSnapComment = `query GetSnapComment($id: ID!) {
       id
       time
       code
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      snapComments {
+        nextToken
+      }
     }
   }
 }
@@ -588,9 +984,50 @@ export const getQuestionSnapshot = `query GetQuestionSnapshot($id: ID!) {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -627,6 +1064,12 @@ export const getQuestionSet = `query GetQuestionSet($id: ID!) {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     questions {
       items {
@@ -659,14 +1102,6 @@ export const listQuestionSets = `query ListQuestionSets(
         description
       }
       questions {
-        items {
-          id
-          type
-          name
-          content
-          test
-          tags
-        }
         nextToken
       }
       name
@@ -683,6 +1118,14 @@ export const getQuestion = `query GetQuestion($id: ID!) {
     type
     questionSet {
       id
+      team {
+        id
+        name
+        description
+      }
+      questions {
+        nextToken
+      }
       name
       description
       tags

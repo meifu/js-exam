@@ -1,0 +1,11 @@
+{
+    "AppSyncApiName": "innovap3schema",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authjsexame6084aeb",
+            "Outputs.UserPoolId"
+        ]
+    }
+}

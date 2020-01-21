@@ -1,4 +1,4 @@
-// eslint-disable
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
 export const onUpdateJeUserByJeUserId = `subscription OnUpdateJeUserByJeUserId($id: String) {
@@ -7,33 +7,113 @@ export const onUpdateJeUserByJeUserId = `subscription OnUpdateJeUserByJeUserId($
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
@@ -67,15 +147,47 @@ export const onUpdateTestByTestId = `subscription OnUpdateTestByTestId($id: Stri
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -88,6 +200,39 @@ export const onUpdateTestByTestId = `subscription OnUpdateTestByTestId($id: Stri
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -105,6 +250,7 @@ export const onUpdateTestByTestId = `subscription OnUpdateTestByTestId($id: Stri
     }
     status
     tags
+    comment
   }
 }
 `;
@@ -113,18 +259,75 @@ export const onUpdateRoomByRoomId = `subscription OnUpdateRoomByRoomId($id: Stri
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -139,10 +342,52 @@ export const onUpdateRoomByRoomId = `subscription OnUpdateRoomByRoomId($id: Stri
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
@@ -154,6 +399,39 @@ export const onUpdateRecordByRecordId = `subscription OnUpdateRecordByRecordId($
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -186,22 +464,80 @@ export const onUpdateRecordByRecordId = `subscription OnUpdateRecordByRecordId($
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
@@ -211,18 +547,75 @@ export const onCreateRoom = `subscription OnCreateRoom {
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -237,10 +630,52 @@ export const onCreateRoom = `subscription OnCreateRoom {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
@@ -249,18 +684,75 @@ export const onUpdateRoom = `subscription OnUpdateRoom {
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -275,10 +767,52 @@ export const onUpdateRoom = `subscription OnUpdateRoom {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
@@ -287,18 +821,75 @@ export const onDeleteRoom = `subscription OnDeleteRoom {
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -313,10 +904,52 @@ export const onDeleteRoom = `subscription OnDeleteRoom {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
@@ -326,33 +959,113 @@ export const onCreateJeUser = `subscription OnCreateJeUser {
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
@@ -363,33 +1076,113 @@ export const onUpdateJeUser = `subscription OnUpdateJeUser {
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
@@ -400,33 +1193,113 @@ export const onDeleteJeUser = `subscription OnDeleteJeUser {
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
@@ -508,15 +1381,47 @@ export const onCreateTest = `subscription OnCreateTest {
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -529,6 +1434,39 @@ export const onCreateTest = `subscription OnCreateTest {
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -546,6 +1484,7 @@ export const onCreateTest = `subscription OnCreateTest {
     }
     status
     tags
+    comment
   }
 }
 `;
@@ -554,15 +1493,47 @@ export const onUpdateTest = `subscription OnUpdateTest {
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -575,6 +1546,39 @@ export const onUpdateTest = `subscription OnUpdateTest {
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -592,6 +1596,7 @@ export const onUpdateTest = `subscription OnUpdateTest {
     }
     status
     tags
+    comment
   }
 }
 `;
@@ -600,15 +1605,47 @@ export const onDeleteTest = `subscription OnDeleteTest {
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -621,6 +1658,39 @@ export const onDeleteTest = `subscription OnDeleteTest {
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -638,6 +1708,7 @@ export const onDeleteTest = `subscription OnDeleteTest {
     }
     status
     tags
+    comment
   }
 }
 `;
@@ -649,6 +1720,39 @@ export const onCreateRecord = `subscription OnCreateRecord {
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -681,22 +1785,80 @@ export const onCreateRecord = `subscription OnCreateRecord {
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
@@ -709,6 +1871,39 @@ export const onUpdateRecord = `subscription OnUpdateRecord {
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -741,22 +1936,80 @@ export const onUpdateRecord = `subscription OnUpdateRecord {
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
@@ -769,6 +2022,39 @@ export const onDeleteRecord = `subscription OnDeleteRecord {
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -801,22 +2087,80 @@ export const onDeleteRecord = `subscription OnDeleteRecord {
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
@@ -830,9 +2174,50 @@ export const onCreateComment = `subscription OnCreateComment {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -846,9 +2231,50 @@ export const onUpdateComment = `subscription OnUpdateComment {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -862,9 +2288,50 @@ export const onDeleteComment = `subscription OnDeleteComment {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -878,9 +2345,50 @@ export const onCreateHistory = `subscription OnCreateHistory {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
     snapComments {
       items {
@@ -903,9 +2411,50 @@ export const onUpdateHistory = `subscription OnUpdateHistory {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
     snapComments {
       items {
@@ -928,9 +2477,50 @@ export const onDeleteHistory = `subscription OnDeleteHistory {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
     snapComments {
       items {
@@ -954,6 +2544,17 @@ export const onCreateSnapComment = `subscription OnCreateSnapComment {
       id
       time
       code
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      snapComments {
+        nextToken
+      }
     }
   }
 }
@@ -968,6 +2569,17 @@ export const onUpdateSnapComment = `subscription OnUpdateSnapComment {
       id
       time
       code
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      snapComments {
+        nextToken
+      }
     }
   }
 }
@@ -982,6 +2594,17 @@ export const onDeleteSnapComment = `subscription OnDeleteSnapComment {
       id
       time
       code
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      snapComments {
+        nextToken
+      }
     }
   }
 }
@@ -997,9 +2620,50 @@ export const onCreateQuestionSnapshot = `subscription OnCreateQuestionSnapshot {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -1015,9 +2679,50 @@ export const onUpdateQuestionSnapshot = `subscription OnUpdateQuestionSnapshot {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -1033,9 +2738,50 @@ export const onDeleteQuestionSnapshot = `subscription OnDeleteQuestionSnapshot {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
@@ -1047,6 +2793,12 @@ export const onCreateQuestionSet = `subscription OnCreateQuestionSet {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     questions {
       items {
@@ -1072,6 +2824,12 @@ export const onUpdateQuestionSet = `subscription OnUpdateQuestionSet {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     questions {
       items {
@@ -1097,6 +2855,12 @@ export const onDeleteQuestionSet = `subscription OnDeleteQuestionSet {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     questions {
       items {
@@ -1121,6 +2885,14 @@ export const onCreateQuestion = `subscription OnCreateQuestion {
     type
     questionSet {
       id
+      team {
+        id
+        name
+        description
+      }
+      questions {
+        nextToken
+      }
       name
       description
       tags
@@ -1138,6 +2910,14 @@ export const onUpdateQuestion = `subscription OnUpdateQuestion {
     type
     questionSet {
       id
+      team {
+        id
+        name
+        description
+      }
+      questions {
+        nextToken
+      }
       name
       description
       tags
@@ -1155,6 +2935,14 @@ export const onDeleteQuestion = `subscription OnDeleteQuestion {
     type
     questionSet {
       id
+      team {
+        id
+        name
+        description
+      }
+      questions {
+        nextToken
+      }
       name
       description
       tags

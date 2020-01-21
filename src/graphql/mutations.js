@@ -1,23 +1,83 @@
-// eslint-disable
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createRoom = `mutation CreateRoom($input: CreateRoomInput!) {
-  createRoom(input: $input) {
+export const createRoom = `mutation CreateRoom(
+  $input: CreateRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  createRoom(input: $input, condition: $condition) {
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -32,30 +92,132 @@ export const createRoom = `mutation CreateRoom($input: CreateRoomInput!) {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
-export const updateRoom = `mutation UpdateRoom($input: UpdateRoomInput!) {
-  updateRoom(input: $input) {
+export const updateRoom = `mutation UpdateRoom(
+  $input: UpdateRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  updateRoom(input: $input, condition: $condition) {
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -70,30 +232,132 @@ export const updateRoom = `mutation UpdateRoom($input: UpdateRoomInput!) {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
-export const deleteRoom = `mutation DeleteRoom($input: DeleteRoomInput!) {
-  deleteRoom(input: $input) {
+export const deleteRoom = `mutation DeleteRoom(
+  $input: DeleteRoomInput!
+  $condition: ModelRoomConditionInput
+) {
+  deleteRoom(input: $input, condition: $condition) {
     id
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     subjectId
     description
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     createTime
     password
@@ -108,126 +372,420 @@ export const deleteRoom = `mutation DeleteRoom($input: DeleteRoomInput!) {
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
+    comment
   }
 }
 `;
-export const createJeUser = `mutation CreateJeUser($input: CreateJEUserInput!) {
-  createJEUser(input: $input) {
+export const createJeUser = `mutation CreateJeUser(
+  $input: CreateJEUserInput!
+  $condition: ModelJEUserConditionInput
+) {
+  createJEUser(input: $input, condition: $condition) {
     id
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
 `;
-export const updateJeUser = `mutation UpdateJeUser($input: UpdateJEUserInput!) {
-  updateJEUser(input: $input) {
+export const updateJeUser = `mutation UpdateJeUser(
+  $input: UpdateJEUserInput!
+  $condition: ModelJEUserConditionInput
+) {
+  updateJEUser(input: $input, condition: $condition) {
     id
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
 `;
-export const deleteJeUser = `mutation DeleteJeUser($input: DeleteJEUserInput!) {
-  deleteJEUser(input: $input) {
+export const deleteJeUser = `mutation DeleteJeUser(
+  $input: DeleteJEUserInput!
+  $condition: ModelJEUserConditionInput
+) {
+  deleteJEUser(input: $input, condition: $condition) {
     id
     name
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     hostTest {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
   }
 }
 `;
-export const createTeam = `mutation CreateTeam($input: CreateTeamInput!) {
-  createTeam(input: $input) {
+export const createTeam = `mutation CreateTeam(
+  $input: CreateTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  createTeam(input: $input, condition: $condition) {
     id
     name
     description
@@ -250,8 +808,11 @@ export const createTeam = `mutation CreateTeam($input: CreateTeamInput!) {
   }
 }
 `;
-export const updateTeam = `mutation UpdateTeam($input: UpdateTeamInput!) {
-  updateTeam(input: $input) {
+export const updateTeam = `mutation UpdateTeam(
+  $input: UpdateTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  updateTeam(input: $input, condition: $condition) {
     id
     name
     description
@@ -274,8 +835,11 @@ export const updateTeam = `mutation UpdateTeam($input: UpdateTeamInput!) {
   }
 }
 `;
-export const deleteTeam = `mutation DeleteTeam($input: DeleteTeamInput!) {
-  deleteTeam(input: $input) {
+export const deleteTeam = `mutation DeleteTeam(
+  $input: DeleteTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  deleteTeam(input: $input, condition: $condition) {
     id
     name
     description
@@ -298,20 +862,55 @@ export const deleteTeam = `mutation DeleteTeam($input: DeleteTeamInput!) {
   }
 }
 `;
-export const createTest = `mutation CreateTest($input: CreateTestInput!) {
-  createTest(input: $input) {
+export const createTest = `mutation CreateTest(
+  $input: CreateTestInput!
+  $condition: ModelTestConditionInput
+) {
+  createTest(input: $input, condition: $condition) {
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -324,6 +923,39 @@ export const createTest = `mutation CreateTest($input: CreateTestInput!) {
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -341,23 +973,59 @@ export const createTest = `mutation CreateTest($input: CreateTestInput!) {
     }
     status
     tags
+    comment
   }
 }
 `;
-export const updateTest = `mutation UpdateTest($input: UpdateTestInput!) {
-  updateTest(input: $input) {
+export const updateTest = `mutation UpdateTest(
+  $input: UpdateTestInput!
+  $condition: ModelTestConditionInput
+) {
+  updateTest(input: $input, condition: $condition) {
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -370,6 +1038,39 @@ export const updateTest = `mutation UpdateTest($input: UpdateTestInput!) {
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -387,23 +1088,59 @@ export const updateTest = `mutation UpdateTest($input: UpdateTestInput!) {
     }
     status
     tags
+    comment
   }
 }
 `;
-export const deleteTest = `mutation DeleteTest($input: DeleteTestInput!) {
-  deleteTest(input: $input) {
+export const deleteTest = `mutation DeleteTest(
+  $input: DeleteTestInput!
+  $condition: ModelTestConditionInput
+) {
+  deleteTest(input: $input, condition: $condition) {
     id
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     subjectId
     users {
@@ -416,6 +1153,39 @@ export const deleteTest = `mutation DeleteTest($input: DeleteTestInput!) {
     host {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     description
     timeBegin
@@ -433,17 +1203,54 @@ export const deleteTest = `mutation DeleteTest($input: DeleteTestInput!) {
     }
     status
     tags
+    comment
   }
 }
 `;
-export const createRecord = `mutation CreateRecord($input: CreateRecordInput!) {
-  createRecord(input: $input) {
+export const createRecord = `mutation CreateRecord(
+  $input: CreateRecordInput!
+  $condition: ModelRecordConditionInput
+) {
+  createRecord(input: $input, condition: $condition) {
     id
     subjectId
     syncCode
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -476,34 +1283,128 @@ export const createRecord = `mutation CreateRecord($input: CreateRecordInput!) {
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
 `;
-export const updateRecord = `mutation UpdateRecord($input: UpdateRecordInput!) {
-  updateRecord(input: $input) {
+export const updateRecord = `mutation UpdateRecord(
+  $input: UpdateRecordInput!
+  $condition: ModelRecordConditionInput
+) {
+  updateRecord(input: $input, condition: $condition) {
     id
     subjectId
     syncCode
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -536,34 +1437,128 @@ export const updateRecord = `mutation UpdateRecord($input: UpdateRecordInput!) {
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
 `;
-export const deleteRecord = `mutation DeleteRecord($input: DeleteRecordInput!) {
-  deleteRecord(input: $input) {
+export const deleteRecord = `mutation DeleteRecord(
+  $input: DeleteRecordInput!
+  $condition: ModelRecordConditionInput
+) {
+  deleteRecord(input: $input, condition: $condition) {
     id
     subjectId
     syncCode
     interviewer {
       id
       name
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      hostTest {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
     }
     timeBegin
     timeEnd
@@ -596,28 +1591,89 @@ export const deleteRecord = `mutation DeleteRecord($input: DeleteRecordInput!) {
       name
       content
       test
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
     }
     test {
       id
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
+      team {
+        id
+        name
+        description
+      }
       subjectId
+      users {
+        nextToken
+      }
+      host {
+        id
+        name
+      }
       description
       timeBegin
       timeEnd
+      records {
+        nextToken
+      }
       status
       tags
+      comment
     }
     room {
       id
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
       subjectId
       description
+      host {
+        id
+        name
+      }
       createTime
       password
+      users {
+        nextToken
+      }
+      currentRecord {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      comment
     }
   }
 }
 `;
-export const createComment = `mutation CreateComment($input: CreateCommentInput!) {
-  createComment(input: $input) {
+export const createComment = `mutation CreateComment(
+  $input: CreateCommentInput!
+  $condition: ModelCommentConditionInput
+) {
+  createComment(input: $input, condition: $condition) {
     author
     time
     content
@@ -625,15 +1681,59 @@ export const createComment = `mutation CreateComment($input: CreateCommentInput!
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
 `;
-export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!) {
-  updateComment(input: $input) {
+export const updateComment = `mutation UpdateComment(
+  $input: UpdateCommentInput!
+  $condition: ModelCommentConditionInput
+) {
+  updateComment(input: $input, condition: $condition) {
     author
     time
     content
@@ -641,15 +1741,59 @@ export const updateComment = `mutation UpdateComment($input: UpdateCommentInput!
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
 `;
-export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!) {
-  deleteComment(input: $input) {
+export const deleteComment = `mutation DeleteComment(
+  $input: DeleteCommentInput!
+  $condition: ModelCommentConditionInput
+) {
+  deleteComment(input: $input, condition: $condition) {
     author
     time
     content
@@ -657,15 +1801,59 @@ export const deleteComment = `mutation DeleteComment($input: DeleteCommentInput!
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
 `;
-export const createHistory = `mutation CreateHistory($input: CreateHistoryInput!) {
-  createHistory(input: $input) {
+export const createHistory = `mutation CreateHistory(
+  $input: CreateHistoryInput!
+  $condition: ModelHistoryConditionInput
+) {
+  createHistory(input: $input, condition: $condition) {
     id
     time
     code
@@ -673,9 +1861,50 @@ export const createHistory = `mutation CreateHistory($input: CreateHistoryInput!
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
     snapComments {
       items {
@@ -689,8 +1918,11 @@ export const createHistory = `mutation CreateHistory($input: CreateHistoryInput!
   }
 }
 `;
-export const updateHistory = `mutation UpdateHistory($input: UpdateHistoryInput!) {
-  updateHistory(input: $input) {
+export const updateHistory = `mutation UpdateHistory(
+  $input: UpdateHistoryInput!
+  $condition: ModelHistoryConditionInput
+) {
+  updateHistory(input: $input, condition: $condition) {
     id
     time
     code
@@ -698,9 +1930,50 @@ export const updateHistory = `mutation UpdateHistory($input: UpdateHistoryInput!
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
     snapComments {
       items {
@@ -714,8 +1987,11 @@ export const updateHistory = `mutation UpdateHistory($input: UpdateHistoryInput!
   }
 }
 `;
-export const deleteHistory = `mutation DeleteHistory($input: DeleteHistoryInput!) {
-  deleteHistory(input: $input) {
+export const deleteHistory = `mutation DeleteHistory(
+  $input: DeleteHistoryInput!
+  $condition: ModelHistoryConditionInput
+) {
+  deleteHistory(input: $input, condition: $condition) {
     id
     time
     code
@@ -723,9 +1999,50 @@ export const deleteHistory = `mutation DeleteHistory($input: DeleteHistoryInput!
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
     snapComments {
       items {
@@ -739,8 +2056,11 @@ export const deleteHistory = `mutation DeleteHistory($input: DeleteHistoryInput!
   }
 }
 `;
-export const createSnapComment = `mutation CreateSnapComment($input: CreateSnapCommentInput!) {
-  createSnapComment(input: $input) {
+export const createSnapComment = `mutation CreateSnapComment(
+  $input: CreateSnapCommentInput!
+  $condition: ModelSnapCommentConditionInput
+) {
+  createSnapComment(input: $input, condition: $condition) {
     id
     time
     author
@@ -749,12 +2069,26 @@ export const createSnapComment = `mutation CreateSnapComment($input: CreateSnapC
       id
       time
       code
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      snapComments {
+        nextToken
+      }
     }
   }
 }
 `;
-export const updateSnapComment = `mutation UpdateSnapComment($input: UpdateSnapCommentInput!) {
-  updateSnapComment(input: $input) {
+export const updateSnapComment = `mutation UpdateSnapComment(
+  $input: UpdateSnapCommentInput!
+  $condition: ModelSnapCommentConditionInput
+) {
+  updateSnapComment(input: $input, condition: $condition) {
     id
     time
     author
@@ -763,12 +2097,26 @@ export const updateSnapComment = `mutation UpdateSnapComment($input: UpdateSnapC
       id
       time
       code
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      snapComments {
+        nextToken
+      }
     }
   }
 }
 `;
-export const deleteSnapComment = `mutation DeleteSnapComment($input: DeleteSnapCommentInput!) {
-  deleteSnapComment(input: $input) {
+export const deleteSnapComment = `mutation DeleteSnapComment(
+  $input: DeleteSnapCommentInput!
+  $condition: ModelSnapCommentConditionInput
+) {
+  deleteSnapComment(input: $input, condition: $condition) {
     id
     time
     author
@@ -777,12 +2125,26 @@ export const deleteSnapComment = `mutation DeleteSnapComment($input: DeleteSnapC
       id
       time
       code
+      record {
+        id
+        subjectId
+        syncCode
+        timeBegin
+        timeEnd
+        status
+      }
+      snapComments {
+        nextToken
+      }
     }
   }
 }
 `;
-export const createQuestionSnapshot = `mutation CreateQuestionSnapshot($input: CreateQuestionSnapshotInput!) {
-  createQuestionSnapshot(input: $input) {
+export const createQuestionSnapshot = `mutation CreateQuestionSnapshot(
+  $input: CreateQuestionSnapshotInput!
+  $condition: ModelQuestionSnapshotConditionInput
+) {
+  createQuestionSnapshot(input: $input, condition: $condition) {
     id
     type
     name
@@ -792,15 +2154,59 @@ export const createQuestionSnapshot = `mutation CreateQuestionSnapshot($input: C
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
 `;
-export const updateQuestionSnapshot = `mutation UpdateQuestionSnapshot($input: UpdateQuestionSnapshotInput!) {
-  updateQuestionSnapshot(input: $input) {
+export const updateQuestionSnapshot = `mutation UpdateQuestionSnapshot(
+  $input: UpdateQuestionSnapshotInput!
+  $condition: ModelQuestionSnapshotConditionInput
+) {
+  updateQuestionSnapshot(input: $input, condition: $condition) {
     id
     type
     name
@@ -810,15 +2216,59 @@ export const updateQuestionSnapshot = `mutation UpdateQuestionSnapshot($input: U
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
 `;
-export const deleteQuestionSnapshot = `mutation DeleteQuestionSnapshot($input: DeleteQuestionSnapshotInput!) {
-  deleteQuestionSnapshot(input: $input) {
+export const deleteQuestionSnapshot = `mutation DeleteQuestionSnapshot(
+  $input: DeleteQuestionSnapshotInput!
+  $condition: ModelQuestionSnapshotConditionInput
+) {
+  deleteQuestionSnapshot(input: $input, condition: $condition) {
     id
     type
     name
@@ -828,20 +2278,70 @@ export const deleteQuestionSnapshot = `mutation DeleteQuestionSnapshot($input: D
       id
       subjectId
       syncCode
+      interviewer {
+        id
+        name
+      }
       timeBegin
       timeEnd
       status
+      comment {
+        nextToken
+      }
+      history {
+        nextToken
+      }
+      ques {
+        type
+        name
+        content
+        test
+      }
+      question {
+        id
+        type
+        name
+        content
+        test
+      }
+      test {
+        id
+        subjectId
+        description
+        timeBegin
+        timeEnd
+        status
+        tags
+        comment
+      }
+      room {
+        id
+        subjectId
+        description
+        createTime
+        password
+        comment
+      }
     }
   }
 }
 `;
-export const createQuestionSet = `mutation CreateQuestionSet($input: CreateQuestionSetInput!) {
-  createQuestionSet(input: $input) {
+export const createQuestionSet = `mutation CreateQuestionSet(
+  $input: CreateQuestionSetInput!
+  $condition: ModelQuestionSetConditionInput
+) {
+  createQuestionSet(input: $input, condition: $condition) {
     id
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     questions {
       items {
@@ -860,13 +2360,22 @@ export const createQuestionSet = `mutation CreateQuestionSet($input: CreateQuest
   }
 }
 `;
-export const updateQuestionSet = `mutation UpdateQuestionSet($input: UpdateQuestionSetInput!) {
-  updateQuestionSet(input: $input) {
+export const updateQuestionSet = `mutation UpdateQuestionSet(
+  $input: UpdateQuestionSetInput!
+  $condition: ModelQuestionSetConditionInput
+) {
+  updateQuestionSet(input: $input, condition: $condition) {
     id
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     questions {
       items {
@@ -885,13 +2394,22 @@ export const updateQuestionSet = `mutation UpdateQuestionSet($input: UpdateQuest
   }
 }
 `;
-export const deleteQuestionSet = `mutation DeleteQuestionSet($input: DeleteQuestionSetInput!) {
-  deleteQuestionSet(input: $input) {
+export const deleteQuestionSet = `mutation DeleteQuestionSet(
+  $input: DeleteQuestionSetInput!
+  $condition: ModelQuestionSetConditionInput
+) {
+  deleteQuestionSet(input: $input, condition: $condition) {
     id
     team {
       id
       name
       description
+      users {
+        nextToken
+      }
+      questionSet {
+        nextToken
+      }
     }
     questions {
       items {
@@ -910,12 +2428,23 @@ export const deleteQuestionSet = `mutation DeleteQuestionSet($input: DeleteQuest
   }
 }
 `;
-export const createQuestion = `mutation CreateQuestion($input: CreateQuestionInput!) {
-  createQuestion(input: $input) {
+export const createQuestion = `mutation CreateQuestion(
+  $input: CreateQuestionInput!
+  $condition: ModelQuestionConditionInput
+) {
+  createQuestion(input: $input, condition: $condition) {
     id
     type
     questionSet {
       id
+      team {
+        id
+        name
+        description
+      }
+      questions {
+        nextToken
+      }
       name
       description
       tags
@@ -927,12 +2456,23 @@ export const createQuestion = `mutation CreateQuestion($input: CreateQuestionInp
   }
 }
 `;
-export const updateQuestion = `mutation UpdateQuestion($input: UpdateQuestionInput!) {
-  updateQuestion(input: $input) {
+export const updateQuestion = `mutation UpdateQuestion(
+  $input: UpdateQuestionInput!
+  $condition: ModelQuestionConditionInput
+) {
+  updateQuestion(input: $input, condition: $condition) {
     id
     type
     questionSet {
       id
+      team {
+        id
+        name
+        description
+      }
+      questions {
+        nextToken
+      }
       name
       description
       tags
@@ -944,12 +2484,23 @@ export const updateQuestion = `mutation UpdateQuestion($input: UpdateQuestionInp
   }
 }
 `;
-export const deleteQuestion = `mutation DeleteQuestion($input: DeleteQuestionInput!) {
-  deleteQuestion(input: $input) {
+export const deleteQuestion = `mutation DeleteQuestion(
+  $input: DeleteQuestionInput!
+  $condition: ModelQuestionConditionInput
+) {
+  deleteQuestion(input: $input, condition: $condition) {
     id
     type
     questionSet {
       id
+      team {
+        id
+        name
+        description
+      }
+      questions {
+        nextToken
+      }
       name
       description
       tags
